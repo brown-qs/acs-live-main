@@ -1,0 +1,18 @@
+{
+  "name": "@elegantstack/gatsby-plugin-utility-directives",
+  "version": "2.4.0",
+  "main": "index.js",
+  "private": true,
+  "author": "ElegantStack Team",
+  "license": "",
+  "dependencies": {
+    "@sanity/block-content-to-markdown": "^0.0.5",
+    "slugify": "^1.4.5",
+    "url-join": "^4.0.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.24.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

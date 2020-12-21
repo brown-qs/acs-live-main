@@ -1,0 +1,41 @@
+{
+  "name": "gatsby-theme-flexiblog",
+  "private": true,
+  "license": "",
+  "workspaces": [
+    "packages/**",
+    "site"
+  ],
+  "scripts": {
+    "clean": "yarn lerna clean",
+    "build:starters": "yarn lerna run build --stream",
+    "ci:build:starter-agency": "GATSBY_ALGOLIA_INDEX_NAME=agency yarn workspace @gatsby-starter-flexiblog/agency build",
+    "ci:build:starter-beauty": "GATSBY_ALGOLIA_INDEX_NAME=beauty yarn workspace @gatsby-starter-flexiblog/beauty build",
+    "ci:build:starter-education": "GATSBY_ALGOLIA_INDEX_NAME=education yarn workspace @gatsby-starter-flexiblog/education build",
+    "ci:build:starter-medical": "GATSBY_ALGOLIA_INDEX_NAME=medical yarn workspace @gatsby-starter-flexiblog/medical build",
+    "ci:build:starter-minimal": "GATSBY_ALGOLIA_INDEX_NAME=minimal yarn workspace @gatsby-starter-flexiblog/minimal build",
+    "ci:build:starter-minimal-v2": "GATSBY_ALGOLIA_INDEX_NAME=minimal-v2 yarn workspace @gatsby-starter-flexiblog/minimal-v2 build",
+    "ci:build:starter-news": "GATSBY_ALGOLIA_INDEX_NAME=news yarn workspace @gatsby-starter-flexiblog/news build",
+    "ci:build:starter-personal": "GATSBY_ALGOLIA_INDEX_NAME=personal yarn workspace @gatsby-starter-flexiblog/personal build",
+    "ci:build:starter-sales": "GATSBY_ALGOLIA_INDEX_NAME=sales yarn workspace @gatsby-starter-flexiblog/sales build",
+    "ci:build:starter-science": "GATSBY_ALGOLIA_INDEX_NAME=science yarn workspace @gatsby-starter-flexiblog/science build",
+    "release": "lerna version --create-release gitlab",
+    "prettier:windows": "./node_modules/.bin/prettier --write \"{packages,starters}/**/*.{jsx,js}\""
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lerna": "^3.16.4",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier:windows"
+    }
+  },
+  "dependencies": {
+    "firebase": "^8.2.0",
+    "gatsby-plugin-firebase": "^0.2.0-beta.4",
+    "query-string": "^6.13.7",
+    "react-phone-input-2": "^2.13.9"
+  }
+}
